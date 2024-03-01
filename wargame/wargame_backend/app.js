@@ -93,8 +93,8 @@ function generateSessionID(userID) {
     const randomPart = Math.floor(Math.random() * 1000000);
     return `${userID}-${randomPart}`;
 }
-
-app.get('/login/:login/:senha', (req, res) => {
+//Correção Sql injection Tatiana
+app.post('/login/:login/:senha', (req, res) => {
     const login = req.params.login;
     const senha = req.params.senha;
 
